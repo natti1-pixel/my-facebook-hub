@@ -5,73 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Facebook Hub</title>
-
-  <!-- Telegram Mini App support -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #eef3f8;
-      color: #172033;
-      padding: 30px 15px;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: auto;
-      background: white;
-      padding: 24px;
-      border-radius: 16px;
-    }
-
-    h1 {
-      color: #1877f2;
-    }
-
-    p {
-      line-height: 1.5;
-    }
-
-    a {
-      display: block;
-      padding: 14px;
-      margin: 15px 0;
-      background: #1877f2;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    a.telegram {
-      background: #229ed9;
-    }
-  </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>My Facebook Hub</h1>
-    <p>Welcome to my Telegram Mini App!</p>
-    <p>Choose an option below.</p>
+  <h1>My Facebook Hub</h1>
+  <p>Welcome to your Facebook Mini App!</p>
 
-    <a href="https://www.facebook.com/">
-      Open Facebook
-    </a>
-
-    <a class="telegram" href="https://telegram.org/">
-      Open Telegram
-    </a>
-  </div>
+  <button onclick="openFacebook()">
+    Open Facebook
+  </button>
 
   <script>
-    if (window.Telegram &&
-        window.Telegram.WebApp) {
-      const app = window.Telegram.WebApp;
-      app.ready();
-      app.expand();
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    tg.expand();
+
+    function openFacebook() {
+      tg.openLink("https://www.facebook.com/");
     }
   </script>
 </body>
