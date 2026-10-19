@@ -5,15 +5,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Facebook Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      font-family: Arial, sans-serif;
+      background: #eef3f8;
+      color: #172033;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 30px auto;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      color: #1877f2;
+      font-size: 28px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #526078;
+    }
+
+    .tile {
+      display: block;
+      margin: 14px 0;
+      padding: 15px;
+      background: #1877f2;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .tile:active {
+      opacity: 0.8;
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      color: #697586;
+    }
+  </style>
 </head>
+
 <body>
-  <h2>My Facebook Hub</h2>
+  <main class="container">
+    <h1>My Facebook Hub</h1>
 
-  <a href="https://www.facebook.com/"
-     target="_self"
-     rel="noopener noreferrer">
-    <button type="button">Open Facebook</button>
-  </a>
+    <p>
+      Welcome! Open Facebook and explore
+      your Facebook shortcuts.
+    </p>
 
+    <a class="tile" href="https://www.facebook.com/">
+      Open Facebook
+    </a>
+
+    <a class="tile"
+       href="https://www.facebook.com/pages/">
+      Facebook Pages
+    </a>
+
+    <a class="tile"
+       href="https://m.facebook.com/">
+      Facebook Mobile
+    </a>
+
+    <p class="footer">
+      My Facebook Hub • Telegram Mini App
+    </p>
+  </main>
 </body>
 </html>
