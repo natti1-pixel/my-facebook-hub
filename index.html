@@ -5,24 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Facebook Hub</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <h1>My Facebook Hub</h1>
-  <p>Welcome to your Facebook Mini App!</p>
+  <h2>My Facebook Hub</h2>
 
-  <button onclick="openFacebook()">
-    Open Facebook
-  </button>
+  <a href="https://www.facebook.com/"
+     target="_self"
+     rel="noopener noreferrer">
+    <button type="button">Open Facebook</button>
+  </a>
 
-  <script>
-    const tg = window.Telegram.WebApp;
-    tg.ready();
-    tg.expand();
-
-    function openFacebook() {
-      tg.openLink("https://www.facebook.com/");
-    }
-  </script>
 </body>
 </html>
