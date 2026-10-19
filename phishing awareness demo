@@ -1,1 +1,94 @@
-index.html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phishing Awareness Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef3f8;
+      color: #172033;
+      margin: 0;
+      padding: 24px 16px;
+    }
+    main {
+      max-width: 380px;
+      margin: 30px auto;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px #0001;
+    }
+    h1 { font-size: 24px; }
+    .notice {
+      background: #fff4d6;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .field {
+      padding: 14px;
+      margin: 12px 0;
+      border: 1px solid #aab5c4;
+      border-radius: 7px;
+      color: #687386;
+      background: #f8fafc;
+    }
+    button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 7px;
+      background: #175cd3;
+      color: white;
+      font-size: 16px;
+    }
+    #lesson {
+      display: none;
+      margin-top: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p>EDUCATIONAL SECURITY DEMO</p>
+    <h1>Account Login Demo</h1>
+
+    <div class="notice">
+      This is a fictional training page.
+      Never enter real account details.
+    </div>
+
+    <p>Example fields for learning only:</p>
+    <div class="field">Example username (not editable)</div>
+    <div class="field">Example password (not editable)</div>
+
+    <button id="learn">Continue to safety lesson</button>
+
+    <section id="lesson" aria-live="polite">
+      <h2>Spot the warning signs</h2>
+      <ul>
+        <li>Check the website address.</li>
+        <li>Beware of urgent threats.</li>
+        <li>Never share verification codes.</li>
+        <li>Open the official website directly.</li>
+      </ul>
+      <strong>Training complete.</strong>
+      <p>No information was collected or sent.</p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("learn").addEventListener(
+      "click", function () {
+        document.getElementById("lesson").style.display = "block";
+        this.textContent = "Safety lesson opened";
+      }
+    );
+  </script>
+</body>
+</html>
+
