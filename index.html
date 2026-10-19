@@ -4,88 +4,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Phishing Awareness Demo</title>
+  <title>Dummy Credential Test</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #eef3f8;
       color: #172033;
-      margin: 0;
       padding: 24px 16px;
     }
     main {
       max-width: 380px;
       margin: 30px auto;
-      padding: 24px;
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px #0001;
+      padding: 24px;
+      border-radius: 14px;
     }
-    h1 { font-size: 24px; }
-    .notice {
-      background: #fff4d6;
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
       padding: 12px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    .field {
-      padding: 14px;
-      margin: 12px 0;
-      border: 1px solid #aab5c4;
-      border-radius: 7px;
-      color: #687386;
-      background: #f8fafc;
+      margin-top: 12px;
     }
     button {
-      width: 100%;
-      padding: 13px;
-      border: 0;
-      border-radius: 7px;
-      background: #175cd3;
+      background: #0866ff;
       color: white;
-      font-size: 16px;
+      border: 0;
+      border-radius: 8px;
     }
-    #lesson {
-      display: none;
-      margin-top: 18px;
-      line-height: 1.6;
-    }
+    #result { display: none; }
   </style>
 </head>
 <body>
   <main>
-    <p>EDUCATIONAL SECURITY DEMO</p>
-    <h1>Account Login Demo</h1>
+    <h2>Dummy Credential Test</h2>
+    <p>Practice with fictional details only. Never enter a real password.</p>
 
-    <div class="notice">
-      This is a fictional training page.
-      Never enter real account details.
-    </div>
+    <form id="demoForm">
+      <label for="demoUser">Test username</label>
+      <input id="demoUser" autocomplete="off" required>
 
-    <p>Example fields for learning only:</p>
-    <div class="field">Example username (not editable)</div>
-    <div class="field">Example password (not editable)</div>
+      <label for="demoPass">Test password</label>
+      <input id="demoPass" type="password" autocomplete="off" required>
 
-    <button id="learn">Continue to safety lesson</button>
+      <button type="submit">Run test</button>
+    </form>
 
-    <section id="lesson" aria-live="polite">
-      <h2>Spot the warning signs</h2>
-      <ul>
-        <li>Check the website address.</li>
-        <li>Beware of urgent threats.</li>
-        <li>Never share verification codes.</li>
-        <li>Open the official website directly.</li>
-      </ul>
-      <strong>Training complete.</strong>
-      <p>No information was collected or sent.</p>
+    <section id="result" aria-live="polite">
+      <h3 id="message"></h3>
+      <p>This was a local simulation. No credentials were transmitted or saved.</p>
+      <button id="retry" type="button">Try again</button>
     </section>
   </main>
 
-  
-<script>
-  document.getElementById("learn").addEventListener("click", function () {
-    document.getElementById("lesson").style.display = "block";
-    this.textContent = "Safety lesson opened";
-  });
-</script>
-  
+  <script>
+    const form = document.getElementById("demoForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById("demoUser").value;
+      const password = document.getElementById("demoPass").value;
+
+      const match =
+        username === "tester@example.test" &&
+        password === "DemoPassword123!";
+
+      document.getElementById("message").textContent = match
+        ? "Dummy test passed!"
+        : "Dummy details did not match. Try the fictional test values.";
+
+      form.style.display = "none";
+      result.style.display = "block";
+    });
+
+    document.getElementById("retry").addEventListener("click", function () {
+      form.reset();
+      result.style.display = "none";
+      form.style.display = "block";
+    });
+  </script>
+</body>
+</html>
